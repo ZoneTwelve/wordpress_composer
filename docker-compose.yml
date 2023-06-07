@@ -13,6 +13,7 @@ services:
     image: mysql:8
     environment:
       - MYSQL_ROOT_PASSWORD=supersecretpassword
+      - MYSQL_DATABASE=wordpress
       - TZ=Asia/Taipei
     networks:
       - default_network
