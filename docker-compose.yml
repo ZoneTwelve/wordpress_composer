@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    container_name: wp_web
+    image: wordpress
+    ports:
+      - "8080:80"
+    networks:
+      - default_network 
+  sql:
+    container_name: wp_sql
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=supersecretpassword
+      - TZ=Asia/Taipei
+    networks:
+      - default_network
+networks:
+  default_network:
+    name: dev
+    external: true
